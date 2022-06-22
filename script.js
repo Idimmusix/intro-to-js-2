@@ -6,10 +6,10 @@ let count, num1, num2, sign;
 // returns true if number is valid an false otherwise
 function validateNum1(num) {
   count = 3;
-  while (count >= 0) {
+  while (count > 0) {
     num1 = num;
     if (isNaN(num1)) {
-      count--; //after putting wrong number three times, the program will end
+      --count; //after putting wrong number three times, the program will end
       num = prompt(
         num1 +
           " Is not a number\nYou have " +
@@ -26,10 +26,10 @@ function validateNum1(num) {
 }
 function validateNum2(num) {
   count = 3;
-  while (count >= 0) {
+  while (count > 0) {
     num2 = num;
     if (isNaN(num1)) {
-      count--; //after putting wrong number three times, the program will end
+      --count; //after putting wrong number three times, the program will end
       num = prompt(
         num2 +
           " Is not a number\nYou have " +
@@ -46,9 +46,9 @@ function validateNum2(num) {
 }
 function validateSign(signer) {
   count = 3;
-  while (count >= 0) {
+  while (count > 0) {
     sign = signer;
-    count--;
+    --count;
     switch (sign) {
       //after putting wrong number three times, the program will end
       case "1":
@@ -98,6 +98,7 @@ function calculate() {
     return;
   }
   //prompt user for a maths sign
+  else{
   sign = prompt(
     num1 +
       "\nchoose 1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
@@ -133,7 +134,7 @@ function calculate() {
       break;
     default:
       alert("how you take reach here?, please send me a message");
-  }
+  }}
   alert(num1 + " " + mainSign + " " + num2 + " = " + num3);
 }
 
