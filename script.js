@@ -79,9 +79,8 @@ function validateSign(signer) {
             count +
             " more times to enter a valid symbol"
         );
-        break;
+        continue;
     }
-    break;
   }
   count = 3;
   return 0;
