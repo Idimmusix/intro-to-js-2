@@ -100,46 +100,44 @@ function calculate() {
     return;
   }
   //prompt user for a maths sign
-  else {
-    sign = prompt(
-      num1 +
-      "\nchoose 1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
-    );
-    //check if number is valid
-    let mainSign = validateSign(sign);
-    if (mainSign === 0) {
-      alert("e pain us, but we have to let you go, Try again later");
-      return;
-    }
 
-    num2 = prompt(
-      num1 + " " + mainSign + " " + "\n\nEnter the second number: "
-    );
-    if (!validateNum2(num2)) {
-      alert("e pain us, but we have to let you go, Try again later");
-      return;
-    }
-    let num3;
-    switch (mainSign) {
-      case "+":
-        num3 = parseFloat(num1) + parseFloat(num2);
-        break;
-      case "-":
-        num3 = num1 - num2;
-        break;
-      case "/":
-        num3 = num1 / num2;
-        break;
-      case "*":
-        num3 = num1 * num2;
-        break;
-      case "%":
-        num3 = num1 % num2;
-        break;
-      default:
-        alert("how you take reach here?, please send me a message");
-    }
+  sign = prompt(
+    num1 +
+    "\nchoose 1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
+  );
+  //check if number is valid
+  let mainSign = validateSign(sign);
+  if (mainSign === 0) {
+    alert("e pain us, but we have to let you go, Try again later");
+    return;
   }
+
+  num2 = prompt(num1 + " " + mainSign + " " + "\n\nEnter the second number: ");
+  if (!validateNum2(num2)) {
+    alert("e pain us, but we have to let you go, Try again later");
+    return;
+  }
+  let num3;
+  switch (mainSign) {
+    case "+":
+      num3 = parseFloat(num1) + parseFloat(num2);
+      break;
+    case "-":
+      num3 = parseFloat(num1) - parseFloat(num2);
+      break;
+    case "/":
+      num3 = num1 / num2;
+      break;
+    case "*":
+      num3 = num1 * num2;
+      break;
+    case "%":
+      num3 = num1 % num2;
+      break;
+    default:
+      alert("how you take reach here?, please send me a message");
+  }
+
   alert(num1 + " " + mainSign + " " + num2 + " = " + num3);
 }
 
