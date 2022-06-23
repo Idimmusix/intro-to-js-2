@@ -14,9 +14,9 @@ function validateNum1(num) {
     if (isNaN(num1) && count > 0) {
       num = prompt(
         num1 +
-        " Is not a number\nYou have " +
-        count +
-        " more times to enter a valid number"
+          " Is not a number\nYou have " +
+          count +
+          " more times to enter a valid number"
       );
       continue;
     } else {
@@ -29,14 +29,15 @@ function validateNum1(num) {
 function validateNum2(num) {
   count = 3;
   while (count > 0) {
+    --count; //after putting wrong number three times, the program will end
     num2 = num;
-    if (isNaN(num1)) {
-      --count; //after putting wrong number three times, the program will end
+    if (isNaN(num2) && count > 0) {
+      //--count;after putting wrong number three times, the program will end
       num = prompt(
         num2 +
-        " Is not a number\nYou have " +
-        count +
-        " more times to enter a valid number"
+          " Is not a number\nYou have " +
+          count +
+          " more times to enter a valid number"
       );
       continue;
     } else {
@@ -77,9 +78,9 @@ function validateSign(signer) {
       default:
         signer = prompt(
           sign +
-          " Is not a math symbol\nYou have " +
-          count +
-          " more times to enter a valid symbol"
+            " Is not a math symbol\nYou have " +
+            count +
+            " more times to enter a valid symbol"
         );
         continue;
     }
@@ -95,7 +96,7 @@ function calculate() {
     "What will you like to calculate today?\n\nEnter your first number: "
   );
   //check if number is valid
-  if (!validateNum1(num1)) {
+  if (!validateNum1(num1) || isNaN(num1)) {
     alert("e pain us, but we have to let you go, Try again later"); //After three times of trial
     return;
   }
@@ -103,7 +104,7 @@ function calculate() {
 
   sign = prompt(
     num1 +
-    "\nchoose 1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
+      "\nchoose 1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
   );
   //check if number is valid
   let mainSign = validateSign(sign);
@@ -113,7 +114,7 @@ function calculate() {
   }
 
   num2 = prompt(num1 + " " + mainSign + " " + "\n\nEnter the second number: ");
-  if (!validateNum2(num2)) {
+  if (!validateNum2(num2) || isNaN(num2)) {
     alert("e pain us, but we have to let you go, Try again later");
     return;
   }
