@@ -1,3 +1,5 @@
+/* jshint esversion:11 */
+
 let count, num1, num2, sign;
 
 //a function to check if the user input is a number
@@ -7,9 +9,9 @@ let count, num1, num2, sign;
 function validateNum1(num) {
   count = 3;
   while (count > 0) {
+    --count; //after putting wrong number three times, the program will end
     num1 = num;
-    if (isNaN(num1)) {
-      --count; //after putting wrong number three times, the program will end
+    if (isNaN(num1) && count > 0) {
       num = prompt(
         num1 +
         " Is not a number\nYou have " +
@@ -110,7 +112,9 @@ function calculate() {
       return;
     }
 
-    num2 = prompt(num1 + " " + mainSign + " " + "\n\nEnter the second number: ");
+    num2 = prompt(
+      num1 + " " + mainSign + " " + "\n\nEnter the second number: "
+    );
     if (!validateNum2(num2)) {
       alert("e pain us, but we have to let you go, Try again later");
       return;
