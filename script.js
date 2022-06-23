@@ -76,11 +76,14 @@ function validateSign(signer) {
       case "modulus":
         return "%";
       default:
-        signer = prompt(
+        alert(
           sign +
             " Is not a math symbol\nYou have " +
             count +
             " more times to enter a valid symbol"
+        );
+        signer = prompt(
+          "\nchoose \n1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
         );
         continue;
     }
@@ -104,7 +107,7 @@ function calculate() {
 
   sign = prompt(
     num1 +
-      "\nchoose 1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
+      "\nchoose \n1. add (+) \n2. minus (-) \n3. divide (/)\n4. multiply (*) \n5. modulus (%) \n"
   );
   //check if number is valid
   let mainSign = validateSign(sign);
